@@ -16,7 +16,7 @@ export default function Projects(props) {
                 const response = await axios.get('https://atugatranapi.pages.dev/' + props.API);
                 setData(response.data);
             } catch (error) {
-                console.error('asd Error fetching data:', error);
+                console.error('Error fetching data:', error);
             } finally {
                 setLoading(false);
             }
@@ -37,12 +37,13 @@ export default function Projects(props) {
             ) : (
                 data.map((item, index) => (
                     <Card key={index} style={style.card}>
-                        <Card.Cover source={{ uri: item.img }} style={{ resizeMode: 'contain' }} />
+                    
+                        <Card.Cover source={   { uri: item.img }} style={{ resizeMode: 'contain' }} />
                         <Card.Content>
                             {/* Card Title */}
                             <Title style={style.cardTitle}>{item.title}</Title>
                             {/* Links */}
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 10 }}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 10, gap: 100 }}>
                                 <TouchableOpacity onPress={() => handlePress(item.demo)}>
                                     <Text style={style.cardLink}>Live </Text>
                                 </TouchableOpacity>
