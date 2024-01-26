@@ -34,14 +34,14 @@ export default function Projects(props) {
                 data.map((item, index) => (
                     <Card key={index} style={style.card}>
 
-                        <Card.Cover source={   { uri: item.img }} style={{ resizeMode: 'contain' }} />
+                        <Card.Cover source={   { uri: item.img }} style={style.cardImg} />
                         <Card.Content>
                             {/* Card Title */}
                             <Title style={style.cardTitle}>{item.title}</Title>
                             {/* Links */}
                             <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 10, gap: 100 }}>
                                 <TouchableOpacity onPress={() => handlePress(item.demo)}>
-                                    <Text style={style.cardLink}>Live </Text>
+                                    <Text style={style.cardLink}>{props.demo}</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => handlePress(item.src)}>
                                     <Text style={style.cardLink}>Source Code</Text>

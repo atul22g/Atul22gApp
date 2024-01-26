@@ -81,11 +81,14 @@ export default style = StyleSheet.create({
     // Card
     card: {
         marginVertical: 8,
-        marginHorizontal: 15
+        marginHorizontal: 15,
     },
     // Card Image
     cardImg: {
-        width: 600
+        height: 400,
+        resizeMode: "center",
+        // position: "absolute",
+        // top: 0
     },
     // Card Title
     cardTitle: {

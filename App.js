@@ -8,8 +8,8 @@ export default function App() {
 
   useEffect(() => {
     const internetInfo = NetInfo.addEventListener(state => {
-      console.log("Connection type", state.type);
-      console.log("Is connected?", state.isConnected);
+      // console.log("Connection type", state.type);
+      // console.log("Is connected?", state.isConnected);
       setIsConnected(state.isConnected);
     });
 
