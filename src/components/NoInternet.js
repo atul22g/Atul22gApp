@@ -1,17 +1,10 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 import { Button } from 'react-native-paper';
-import { fetch } from '@react-native-community/netinfo';
 import style from '../styles/style'
+import { reloadApp } from './allFunc';
 
 export default function NoInternet() {
-    const reloadApp = () => {
-        fetch().then(state => {
-            console.log("Connection type", state.type);
-            console.log("Is connected?", state.isConnected);
-        });
-    };
-
     return (
         <View style={style.NoInternetContainer}>
             <Text style={style.NoInternetText}>No Internet Connection</Text>

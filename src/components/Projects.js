@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, TouchableOpacity, Linking } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import axios from 'axios';
 import { Title, Card, ActivityIndicator, MD2Colors } from 'react-native-paper';
 // css
 import style from '../styles/style'
+import { handlePress } from './allFunc';
 
 export default function Projects(props) {
     const [data, setData] = useState(null);
@@ -24,11 +25,6 @@ export default function Projects(props) {
         fetchData();
     }, []);
 
-    // On Press
-    const handlePress = (url) => {
-        Linking.openURL(url).catch((err) => console.error('Error opening URL:', err));
-    };
-
     return (
         <View style={{ backgroundColor: props.bg, paddingBottom: 15 }}>
             <Title style={style.projectTitle}>{props.title}</Title>
@@ -37,7 +33,7 @@ export default function Projects(props) {
             ) : (
                 data.map((item, index) => (
                     <Card key={index} style={style.card}>
-                    
+
                         <Card.Cover source={   { uri: item.img }} style={{ resizeMode: 'contain' }} />
                         <Card.Content>
                             {/* Card Title */}
