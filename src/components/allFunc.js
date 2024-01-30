@@ -1,9 +1,15 @@
 import { fetch } from '@react-native-community/netinfo';
-import { Linking } from 'react-native'
+// import { Linking } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
+const navigation = useNavigation();
+
 
 // On Press
 const handlePress = (url) => {
-    Linking.openURL(url).catch((err) => console.error('Error opening URL:', err));
+    console.log(url);
+    // Linking.openURL(url).catch((err) => console.error('Error opening URL:', err));
+    // const { url } = route.params;
+    navigation.navigate('WebView',{url})
 };
 
 // App Reload
